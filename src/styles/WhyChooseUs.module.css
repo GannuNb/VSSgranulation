@@ -1,0 +1,239 @@
+.section{
+  padding:120px 20px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg,#f6f8fb,#eef3f9);
+}
+
+/* wave divider bottom */
+
+.waveBottom{
+  position:absolute;
+  bottom:-1px;
+  left:0;
+  width:100%;
+  height:90px;
+  background:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'><path fill='%23ffffff' fill-opacity='1' d='M0,32L48,48C96,64,192,96,288,101.3C384,107,480,85,576,74.7C672,64,768,64,864,80C960,96,1056,128,1152,128C1248,128,1344,96,1392,80L1440,64L1440,160L0,160Z'></path></svg>");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+/* decorative shapes */
+
+.section::before{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  background:linear-gradient(135deg,#8fd3f4,#84fab0);
+  border-radius:50%;
+  top:60px;
+  left:80px;
+  opacity:.35;
+  animation:float1 8s ease-in-out infinite;
+}
+
+.section::after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
+  border-radius:50%;
+  bottom:80px;
+  right:120px;
+  opacity:.35;
+  animation:float2 9s ease-in-out infinite;
+}
+/* triangle */
+
+.triangle{
+  position:absolute;
+  width:0;
+  height:0;
+  border-left:60px solid transparent;
+  border-right:60px solid transparent;
+  border-bottom:100px solid rgba(150,180,255,0.25);
+  top:220px;
+  right:200px;
+  animation:float3 10s ease-in-out infinite;
+}
+
+/* container */
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+/* heading */
+
+.title{
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  margin-bottom:70px;
+  color:#203a43;
+  position:relative;
+}
+
+.title::after{
+  content:"";
+  width:70px;
+  height:3px;
+  background:#2c5364;
+  display:block;
+  margin:14px auto 0;
+  border-radius:2px;
+}
+
+/* grid */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:35px;
+}
+
+/* scroll reveal */
+
+.card{
+  opacity:0;
+  transform:translateY(40px);
+
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(8px);
+
+  padding:40px 30px;
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,0.6);
+
+  box-shadow:0 12px 25px rgba(0,0,0,0.08);
+
+  transition:all .35s ease;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:all .7s ease;
+}
+
+/* hover background */
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(140,180,255,0.15),
+    rgba(180,220,255,0.18)
+  );
+  opacity:0;
+  transition:opacity .35s ease;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 45px rgba(0,0,0,0.18);
+  border:1px solid rgba(120,160,255,0.45);
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+/* icon */
+
+.icon{
+  width:70px;
+  height:70px;
+  margin:auto;
+  margin-bottom:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:30px;
+  border-radius:50%;
+  color:white;
+
+  background:linear-gradient(
+    270deg,
+    #203a43,
+    #2c5364,
+    #4e7c86
+  );
+
+  background-size:300% 300%;
+
+  animation:iconGradient 6s ease infinite;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+
+  transition:all .3s ease;
+}
+
+.card:hover .icon{
+  transform:scale(1.12);
+}
+
+/* text */
+
+.card h3{
+  margin-bottom:12px;
+  font-size:20px;
+  color:#203a43;
+}
+
+.card p{
+  font-size:15px;
+  line-height:1.6;
+  color:#555;
+}
+
+/* floating animations */
+
+@keyframes float1{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-30px)}
+  100%{transform:translateY(0)}
+}
+
+@keyframes float2{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(25px)}
+  100%{transform:translateY(0)}
+}
+
+@keyframes float3{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-20px)}
+  100%{transform:translateY(0)}
+}
+
+/* icon gradient animation */
+
+@keyframes iconGradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+  .title{
+    font-size:34px;
+  }
+
+}

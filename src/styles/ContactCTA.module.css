@@ -1,0 +1,91 @@
+.section{
+  padding:120px 20px;
+  position:relative;
+  overflow:hidden;
+
+  background:linear-gradient(135deg,#203a43,#2c5364);
+  color:white;
+}
+
+/* decorative circles */
+
+.section::before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  background:rgba(255,255,255,0.1);
+  border-radius:50%;
+  top:-80px;
+  left:-80px;
+}
+
+.section::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  bottom:-120px;
+  right:-120px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.title{
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.text{
+  font-size:17px;
+  line-height:1.7;
+  opacity:.9;
+  margin-bottom:40px;
+}
+
+/* buttons */
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.primaryBtn{
+  padding:14px 30px;
+  border-radius:30px;
+  background:white;
+  color:#203a43;
+  font-weight:600;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.primaryBtn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.secondaryBtn{
+  padding:14px 30px;
+  border-radius:30px;
+  border:2px solid white;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.secondaryBtn:hover{
+  background:white;
+  color:#203a43;
+}
