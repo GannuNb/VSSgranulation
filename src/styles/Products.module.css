@@ -1,0 +1,95 @@
+/* HERO HEADER */
+
+.productsHero{
+  padding:110px 20px 90px;
+  text-align:center;
+
+  background:linear-gradient(
+    135deg,
+    #4facfe,
+    #3a7bd5,
+    #2c5364
+  );
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* decorative glow */
+
+.productsHero::before{
+  content:"";
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  background:radial-gradient(
+    circle,
+    rgba(255,255,255,0.15),
+    transparent 70%
+  );
+
+  top:-120px;
+  left:-120px;
+}
+
+/* content container */
+
+.heroContent{
+  max-width:800px;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+/* main heading */
+
+.heroTitle{
+  font-family:"Playfair Display",serif;
+  font-size:46px;
+  font-weight:700;
+
+  color:white;
+
+  margin-bottom:18px;
+}
+
+/* underline */
+
+.heroTitle::after{
+  content:"";
+  width:70px;
+  height:3px;
+
+  background:#00e5ff;
+
+  display:block;
+  margin:14px auto 0;
+}
+
+/* subtitle */
+
+.heroText{
+  font-size:17px;
+  color:#e8f3ff;
+  line-height:1.7;
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+  .productsHero{
+    padding:80px 20px 70px;
+  }
+
+  .heroTitle{
+    font-size:34px;
+  }
+
+  .heroText{
+    font-size:15px;
+  }
+
+}
