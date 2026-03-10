@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
       </div>
 
       {/* wave divider bottom */}
-      <div className={styles.waveBottom}></div>
+      {/* <div className={styles.waveBottom}></div> */}
 
     </section>
   );

@@ -39,7 +39,7 @@ export default function TyreWire() {
 
         <div className={styles.imageBox}>
           <Image
-            src="/images/tyrewireimg.jpg"
+            src="/images/tyre_wire_a1.png"
             alt="Tyre Wire Scrap"
             width={600}
             height={420}

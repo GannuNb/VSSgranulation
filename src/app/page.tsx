@@ -3,6 +3,7 @@ import Link from "next/link";
 import HomeProducts from "../components/HomeProducts";
 import WhyChooseUs from "../components/WhyChooseUs";
 import ContactCTA from "../components/ContactCTA";
+import IndustriesWeServe from "../components/IndustriesWeServe";
 
 export default function Home() {
   return (
@@ -27,7 +28,6 @@ export default function Home() {
 
         </div>
       </section>
-
 
       {/* ABOUT SECTION */}
       <section className={styles.aboutSection}>
@@ -69,7 +69,9 @@ export default function Home() {
       </section>
 
       <HomeProducts />
+      
       <WhyChooseUs />
+      <IndustriesWeServe />
       <ContactCTA />
 
 
