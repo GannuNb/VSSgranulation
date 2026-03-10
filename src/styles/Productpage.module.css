@@ -1,0 +1,566 @@
+.productPage{
+  width:100%;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* HERO SECTION */
+
+.hero{
+  position:relative;
+
+background: linear-gradient(135deg, #0f2027, #4c8ca2, #2c5364);
+  padding:140px 20px 120px;
+
+  overflow:hidden;
+}
+
+
+/* CONTENT */
+
+.heroContent{
+  max-width:850px;
+  margin:auto;
+
+  text-align:center;
+
+  color:white;
+
+  position:relative;
+  z-index:2;
+}
+
+
+/* TITLE */
+
+.hero h1{
+  font-family:"Playfair Display", serif;
+
+  font-size:60px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  margin-bottom:20px;
+}
+
+
+/* PARAGRAPH */
+
+.hero p{
+  font-size:19px;
+
+  line-height:1.7;
+
+  opacity:0.9;
+
+  max-width:720px;
+
+  margin:auto;
+
+  margin-bottom:40px;
+}
+
+
+/* BUTTON GROUP */
+
+.heroBtns{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+
+/* PRIMARY BUTTON */
+
+.heroBtnPrimary{
+  padding:14px 32px;
+
+  background:#ff6b00;
+
+  color:white;
+
+  border-radius:30px;
+
+  font-size:16px;
+
+  text-decoration:none;
+
+  transition:0.3s;
+}
+
+.heroBtnPrimary:hover{
+  background:#e45f00;
+  transform:translateY(-2px);
+}
+
+
+/* SECONDARY BUTTON */
+
+.heroBtnSecondary{
+  padding:14px 32px;
+
+  border:2px solid white;
+
+  color:white;
+
+  border-radius:30px;
+
+  font-size:16px;
+
+  text-decoration:none;
+
+  transition:0.3s;
+}
+
+.heroBtnSecondary:hover{
+  background:white;
+  color:#203a43;
+}
+
+
+/* DECORATIVE SHAPES */
+
+.heroCircle1{
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  background:rgba(255,255,255,0.05);
+
+  border-radius:50%;
+
+  top:-100px;
+  left:-100px;
+}
+
+.heroCircle2{
+  position:absolute;
+
+  width:200px;
+  height:200px;
+
+  background:rgba(255,255,255,0.05);
+
+  border-radius:50%;
+
+  bottom:-60px;
+  right:-60px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+  font-size:40px;
+}
+
+.hero p{
+  font-size:17px;
+}
+
+.heroBtns{
+  flex-direction:column;
+}
+
+}
+
+
+/* PRODUCT SECTION */
+
+.productSection{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  padding:100px 20px;
+  align-items:center;
+}
+
+
+/* IMAGE */
+
+.imageBox{
+  width:100%;
+}
+
+.productImage{
+  width:100%;
+  border-radius:14px;
+  transition:0.4s;
+}
+
+.productImage:hover{
+  transform:scale(1.05);
+}
+
+
+/* CONTENT */
+
+.contentBox h2{
+  font-size:34px;
+  margin-bottom:20px;
+}
+
+.contentBox p{
+  color:#555;
+  line-height:1.7;
+  margin-bottom:18px;
+}
+
+
+/* FEATURES */
+
+.features{
+  list-style:none;
+  padding:0;
+  margin:20px 0;
+}
+
+.features li{
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+
+/* BUTTON */
+
+.enquireBtn{
+  padding:14px 28px;
+  background:#ff6b00;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.enquireBtn:hover{
+  background:#e65c00;
+  transform:translateY(-3px);
+}
+
+
+
+/* APPLICATION SECTION */
+
+.applications{
+  background:#213b45;
+  padding:120px 20px;
+}
+
+.appTitle{
+  text-align:center;
+  font-size:36px;
+  color:white;
+  margin-bottom:70px;
+}
+
+
+
+/* CARD WRAPPER */
+
+.cardWrapper{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+
+
+/* CARD */
+
+.appCard{
+  width:320px;
+
+  background:linear-gradient(
+    135deg,
+    #c9f3ff,
+    #a9e3e9
+  );
+
+  border-radius:22px;
+  padding:20px 25px 35px;
+  text-align:center;
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.3);
+
+  transition:0.4s;
+}
+
+
+
+/* IMAGE FRAME */
+
+.cardImageWrap{
+  border-radius:18px;
+  overflow:hidden;
+  margin-bottom:18px;
+}
+
+.cardImageWrap img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+
+
+/* TEXT */
+
+.appCard h3{
+  font-size:20px;
+  margin-bottom:10px;
+  color:#222;
+}
+
+.appCard p{
+  font-size:14px;
+  color:#333;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+
+
+/* BUTTONS */
+
+.cardBtn{
+  background:#222;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.cardBtnPink{
+  background:linear-gradient(
+    90deg,
+    #ff0080,
+    #ff4da6
+  );
+
+  color:white;
+  border:none;
+  padding:10px 22px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+
+
+/* CENTER CARD */
+
+.middleCard{
+  background:white;
+  transform:translateY(-30px) rotate(-2deg);
+  box-shadow:0 25px 60px rgba(0,0,0,0.35);
+}
+
+.middleCard h3{
+  color:#ff0080;
+}
+
+
+
+/* HOVER */
+
+.appCard:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+
+.middleCard:hover{
+  transform:translateY(-35px) scale(1.05);
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .productSection{
+    grid-template-columns:1fr;
+  }
+
+  .cardWrapper{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .middleCard{
+    transform:none;
+  }
+
+}
+
+
+
+
+
+/* INFO SECTION */
+
+.infoSection{
+  padding:120px 20px;
+
+  background:linear-gradient(
+    180deg,
+    #f9fbff,
+    #eef4ff
+  );
+}
+
+/* CONTAINER */
+
+.infoContainer{
+  max-width:1100px;
+  margin:auto;
+
+  background:white;
+
+  padding:60px;
+
+  border-radius:14px;
+
+  box-shadow:0 10px 40px rgba(0,0,0,0.08);
+
+  position:relative;
+}
+
+/* decorative accent line */
+
+.infoContainer::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:6px;
+
+  background:linear-gradient(
+    180deg,
+    #ff6b00,
+    #ff9b40
+  );
+
+  border-radius:6px 0 0 6px;
+}
+
+
+/* HEADINGS */
+
+.infoContainer h2{
+  font-size:34px;
+
+  margin-bottom:20px;
+
+  color:#1a1a1a;
+
+  font-weight:600;
+}
+
+.infoContainer h3{
+  font-size:22px;
+
+  margin-top:35px;
+  margin-bottom:15px;
+
+  color:#333;
+
+  font-weight:600;
+}
+
+/* PARAGRAPH */
+
+.infoContainer p{
+  font-size:16px;
+
+  line-height:1.9;
+
+  color:#555;
+
+  margin-bottom:18px;
+}
+
+/* LIST STYLE */
+
+.infoContainer ul{
+  margin-top:20px;
+
+  padding-left:0;
+
+  list-style:none;
+}
+
+.infoContainer li{
+  font-size:16px;
+
+  margin-bottom:12px;
+
+  padding-left:28px;
+
+  position:relative;
+
+  color:#333;
+}
+
+/* custom bullet */
+
+.infoContainer li::before{
+  content:"✔";
+
+  position:absolute;
+
+  left:0;
+
+  color:#ff6b00;
+
+  font-weight:bold;
+}
+
+
+/* SUB SECTION SPACING */
+
+.infoContainer h2:not(:first-child){
+  margin-top:60px;
+}
+
+
+/* HOVER EFFECT */
+
+.infoContainer:hover{
+  transform:translateY(-4px);
+  transition:0.3s;
+  box-shadow:0 20px 60px rgba(0,0,0,0.12);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .infoContainer{
+    padding:35px;
+  }
+
+  .infoContainer h2{
+    font-size:28px;
+  }
+
+  .infoContainer p{
+    font-size:15px;
+  }
+
+}
