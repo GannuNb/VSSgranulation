@@ -5,13 +5,16 @@ import { useState } from "react";
 export default function Contact() {
 
   const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
     e.preventDefault();
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    setLoading(true);
     setStatus("Sending message...");
 
     try {
@@ -24,16 +27,24 @@ export default function Contact() {
       const data = await res.json();
 
       if (data.success) {
+
         setStatus("✅ Message sent successfully!");
         form.reset();
+
       } else {
-        setStatus("❌ Failed to send message");
+
+        setStatus(`❌ ${data.message || "Failed to send message"}`);
+
       }
 
     } catch (err) {
+
       console.error(err);
-      setStatus("❌ Error sending message");
+      setStatus("❌ Server error. Please try again.");
+
     }
+
+    setLoading(false);
   };
 
   return (
@@ -47,7 +58,6 @@ export default function Contact() {
         <p className={styles.subtitle}>
           Have questions about our products or services? Get in touch with us.
         </p>
-
 
         <div className={styles.contactGrid}>
 
@@ -131,12 +141,12 @@ export default function Contact() {
               required
             />
 
-            <button type="submit">
-              Send Message
+            <button type="submit" disabled={loading}>
+              {loading ? "Sending..." : "Send Message"}
             </button>
 
             {status && (
-              <p style={{marginTop:"10px"}}>
+              <p style={{ marginTop: "10px" }}>
                 {status}
               </p>
             )}
@@ -159,9 +169,9 @@ export default function Contact() {
               width="100%"
               height="380"
               style={{
-                border:0,
-                borderRadius:"14px",
-                boxShadow:"0 10px 25px rgba(0,0,0,0.05)"
+                border: 0,
+                borderRadius: "14px",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.05)"
               }}
               allowFullScreen
               loading="lazy"
@@ -180,9 +190,9 @@ export default function Contact() {
               width="100%"
               height="380"
               style={{
-                border:0,
-                borderRadius:"14px",
-                boxShadow:"0 10px 25px rgba(0,0,0,0.05)"
+                border: 0,
+                borderRadius: "14px",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.05)"
               }}
               allowFullScreen
               loading="lazy"

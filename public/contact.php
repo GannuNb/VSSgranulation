@@ -3,47 +3,73 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-// allow only POST
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo json_encode(["success"=>false,"message"=>"Invalid request"]);
     exit;
 }
 
-// get form data
 $name = htmlspecialchars($_POST["name"] ?? "");
 $email = htmlspecialchars($_POST["email"] ?? "");
 $subject = htmlspecialchars($_POST["subject"] ?? "Website Contact");
 $message = htmlspecialchars($_POST["message"] ?? "");
 
-// check required fields
 if(empty($name) || empty($email) || empty($message)){
     echo json_encode(["success"=>false,"message"=>"Missing fields"]);
     exit;
 }
 
-// admin email
-$to = "info@vssgranulation.com";
+$mail = new PHPMailer(true);
 
-// email subject
-$email_subject = "New Contact Message - VSS Granulation Website";
+try {
 
-// email body
-$email_body = "You received a new message from your website contact form.\n\n";
-$email_body .= "Name: $name\n";
-$email_body .= "Email: $email\n";
-$email_body .= "Subject: $subject\n\n";
-$email_body .= "Message:\n$message\n";
+    $mail->isSMTP();
 
-// headers
-$headers = "From: info@vssgranulation.com\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
+    $mail->Host = "smtp.hostinger.com";
+    $mail->SMTPAuth = true;
 
-// send mail
-if(mail($to,$email_subject,$email_body,$headers)){
+    $mail->Username = "info@vssgranulation.com";
+    $mail->Password = "VSSgranulation@123";
+
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
+
+    $mail->setFrom("info@vssgranulation.com","VSS Granulation Website");
+
+    $mail->addAddress("info@vssgranulation.com");
+
+    $mail->addReplyTo($email,$name);
+
+    $mail->isHTML(false);
+
+    $mail->Subject = "New Contact Message";
+
+    $mail->Body =
+"New Contact Message
+
+Name: $name
+Email: $email
+Subject: $subject
+
+Message:
+$message
+";
+
+    $mail->send();
+
     echo json_encode(["success"=>true]);
-}else{
-    echo json_encode(["success"=>false,"message"=>"Mail failed"]);
-}
 
-?>
+} catch (Exception $e) {
+
+    echo json_encode([
+        "success"=>false,
+        "error"=>$mail->ErrorInfo
+    ]);
+
+}
