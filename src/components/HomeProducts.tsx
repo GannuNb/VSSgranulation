@@ -4,14 +4,14 @@ import Link from "next/link";
 const products = [
   {
     title: "Crumb Rubber",
-    image: "/images/crumb-rubber.jpg",
+    image: "/images/crumb_rubber_a2.png",
     description:
       "High-quality recycled rubber granules used for sports surfaces, playground flooring and industrial applications.",
     link: "/products/crumb-rubber"
   },
   {
     title: "EPDM Granules",
-    image: "/images/epdm.jpg",
+    image: "/images/epdm_a1.png",
     description:
       "Colored EPDM granules ideal for playground flooring, athletic tracks and decorative safety surfaces.",
     link: "/products/epdm-granules"

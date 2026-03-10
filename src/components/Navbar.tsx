@@ -1,15 +1,52 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { FiSearch } from "react-icons/fi";
 import "../styles/navbar.css";
 
 export default function Navbar() {
 
   const pathname = usePathname();
-  const [menuOpen,setMenuOpen] = useState(false);
-  const [productOpen,setProductOpen] = useState(false);
+  const router = useRouter();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
+
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<any[]>([]);
+
+  const searchData = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+    { name: "Crumb Rubber", path: "/products/crumb-rubber" },
+    { name: "EPDM Granules", path: "/products/epdm-granules" },
+    { name: "Tyre Wire", path: "/products/tyre-wire" }
+  ];
+
+  const handleSearch = (value: string) => {
+
+    setQuery(value);
+
+    if (value === "") {
+      setResults([]);
+      return;
+    }
+
+    const filtered = searchData.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase())
+    );
+
+    setResults(filtered);
+  };
+
+  const handleSelect = (path: string) => {
+    setQuery("");
+    setResults([]);
+    router.push(path);
+  };
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -21,18 +58,53 @@ export default function Navbar() {
 
       <div className="container">
 
-        {/* LOGO LEFT */}
-
+        {/* LOGO */}
         <Link href="/" className="logo">
-          VSS Granulation
+          <img src="/images/logo.png" alt="logo" className="logoimg"/>
         </Link>
+
+
+        {/* SEARCH */}
+
+        <div className="search-box">
+
+          <input
+            type="text"
+            placeholder="Search products or pages..."
+            value={query}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+
+          <FiSearch className="search-icon" />
+
+          {results.length > 0 && (
+
+            <div className="search-results">
+
+              {results.map((item, index) => (
+
+                <div
+                  key={index}
+                  className="search-item"
+                  onClick={() => handleSelect(item.path)}
+                >
+                  {item.name}
+                </div>
+
+              ))}
+
+            </div>
+
+          )}
+
+        </div>
 
 
         {/* HAMBURGER */}
 
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={()=>setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
           <span></span>
           <span></span>
@@ -40,13 +112,13 @@ export default function Navbar() {
         </div>
 
 
-        {/* NAV LINKS RIGHT */}
+        {/* NAV LINKS */}
 
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
 
           <Link
             href="/"
-            className={`nav-link ${pathname==="/" ? "active" : ""}`}
+            className={`nav-link ${pathname === "/" ? "active" : ""}`}
             onClick={closeMenu}
           >
             Home
@@ -54,20 +126,18 @@ export default function Navbar() {
 
           <Link
             href="/about"
-            className={`nav-link ${pathname==="/about" ? "active" : ""}`}
+            className={`nav-link ${pathname === "/about" ? "active" : ""}`}
             onClick={closeMenu}
           >
             About
           </Link>
 
 
-          {/* PRODUCTS */}
-
           <div className="dropdown">
 
             <span
               className="nav-link"
-              onClick={()=>setProductOpen(!productOpen)}
+              onClick={() => setProductOpen(!productOpen)}
             >
               Products ▾
             </span>
@@ -102,10 +172,9 @@ export default function Navbar() {
 
           </div>
 
-
           <Link
             href="/contact"
-            className={`nav-link ${pathname==="/contact" ? "active" : ""}`}
+            className={`nav-link ${pathname === "/contact" ? "active" : ""}`}
             onClick={closeMenu}
           >
             Contact
