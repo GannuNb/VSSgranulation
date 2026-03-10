@@ -35,7 +35,7 @@ export default function Home() {
         <div className={styles.aboutContainer}>
 
           <div className={styles.aboutImage}>
-            <img src="/images/crumb1.jpg" alt="About VSS Granulation"/>
+            <img src="/images/crumb_rubber_a1.png" alt="About VSS Granulation"/>
           </div>
 
           <div className={styles.aboutContent}>
