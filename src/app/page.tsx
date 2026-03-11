@@ -9,39 +9,39 @@ export default function Home() {
   return (
     <main>
 
-<section className={styles.hero}>
+      <section className={styles.hero}>
 
-  {/* Background Video */}
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className={styles.heroVideo}
-  >
-    <source src="/images/Hero.mp4" type="video/mp4" />
-  </video>
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className={styles.heroVideo}
+        >
+          <source src="/images/Hero.mp4" type="video/mp4" />
+        </video>
 
-  {/* Overlay */}
-  <div className={styles.overlay}></div>
+        {/* Overlay */}
+        <div className={styles.overlay}></div>
 
-  {/* Content */}
-  <div className={styles.heroContent}>
-    <h1 className={styles.heroTitle}>
-      VSS Granulation
-    </h1>
+        {/* Content */}
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            VSS Granulation
+          </h1>
 
-    <p className={styles.heroText}>
-      Leading manufacturer of high-quality granulated materials,
-      delivering reliable solutions for industrial applications.
-    </p>
+          <p className={styles.heroText}>
+            Leading manufacturer of high-quality granulated materials,
+            delivering reliable solutions for industrial applications.
+          </p>
 
-    <button className={styles.heroBtn}>
-      Explore Products
-    </button>
-  </div>
+          <a href="#products" className={styles.heroBtn}>
+            Explore Products
+          </a>
+        </div>
 
-</section>
+      </section>
 
       {/* ABOUT SECTION */}
       <section className={styles.aboutSection}>
@@ -49,7 +49,7 @@ export default function Home() {
         <div className={styles.aboutContainer}>
 
           <div className={styles.aboutImage}>
-            <img src="/images/crumb_rubber_a1.png" alt="About VSS Granulation"/>
+            <img src="/images/crumb_rubber_a1.png" alt="About VSS Granulation" />
           </div>
 
           <div className={styles.aboutContent}>
@@ -70,11 +70,11 @@ export default function Home() {
               standards and client expectations.
             </p>
 
-              <div className={styles.buttonWrapper}>
-                <Link href="/about" className={styles.readMoreBtn}>
-                  Read More →
-                </Link>
-              </div>
+            <div className={styles.buttonWrapper}>
+              <Link href="/about" className={styles.readMoreBtn}>
+                Read More →
+              </Link>
+            </div>
 
           </div>
 
@@ -83,7 +83,7 @@ export default function Home() {
       </section>
 
       <HomeProducts />
-      
+
       <WhyChooseUs />
       <IndustriesWeServe />
       <ContactCTA />

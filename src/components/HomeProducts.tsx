@@ -27,41 +27,29 @@ const products = [
 
 export default function HomeProducts() {
   return (
-    <section className={styles.productsSection}>
-
+    <section id="products" className={styles.productsSection}>
       {/* glowing background circles */}
       <div className={styles.circle1}></div>
       <div className={styles.circle2}></div>
       <div className={styles.circle3}></div>
 
       <div className={styles.container}>
-
         <h2 className={styles.sectionTitle}>Our Products</h2>
-
         <div className={styles.cards}>
-
           {products.map((product, index) => (
             <div key={index} className={styles.card}>
-
               <div className={styles.imageWrapper}>
-                <img src={product.image} alt={product.title}/>
+                <img src={product.image} alt={product.title} />
               </div>
-
               <h3>{product.title}</h3>
-
               <p>{product.description}</p>
-
               <Link href={product.link} className={styles.learnBtn}>
                 Learn More →
               </Link>
-
             </div>
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 }
