@@ -9,25 +9,39 @@ export default function Home() {
   return (
     <main>
 
-      {/* HERO SECTION */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
+<section className={styles.hero}>
 
-          <h1 className={styles.heroTitle}>
-            VSS Granulation
-          </h1>
+  {/* Background Video */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className={styles.heroVideo}
+  >
+    <source src="/images/Hero.mp4" type="video/mp4" />
+  </video>
 
-          <p className={styles.heroText}>
-            Leading manufacturer of high-quality granulated materials,
-            delivering reliable solutions for industrial applications.
-          </p>
+  {/* Overlay */}
+  <div className={styles.overlay}></div>
 
-          <button className={styles.heroBtn}>
-            Explore Products
-          </button>
+  {/* Content */}
+  <div className={styles.heroContent}>
+    <h1 className={styles.heroTitle}>
+      VSS Granulation
+    </h1>
 
-        </div>
-      </section>
+    <p className={styles.heroText}>
+      Leading manufacturer of high-quality granulated materials,
+      delivering reliable solutions for industrial applications.
+    </p>
+
+    <button className={styles.heroBtn}>
+      Explore Products
+    </button>
+  </div>
+
+</section>
 
       {/* ABOUT SECTION */}
       <section className={styles.aboutSection}>
