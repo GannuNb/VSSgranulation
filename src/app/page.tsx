@@ -4,7 +4,41 @@ import HomeProducts from "../components/HomeProducts";
 import WhyChooseUs from "../components/WhyChooseUs";
 import ContactCTA from "../components/ContactCTA";
 import IndustriesWeServe from "../components/IndustriesWeServe";
+import type { Metadata } from "next";
+import Image from "next/image";
 
+
+export const metadata: Metadata = {
+  title: "VSS Granulation | Tyre Recycling & Rubber Granules Manufacturer",
+  description:
+    "VSS Granulation is a leading tyre recycling company manufacturing high-quality crumb rubber, EPDM granules, and tyre wire for industrial applications.",
+  keywords: [
+    "VSS Granulation",
+    "tyre recycling company",
+    "crumb rubber manufacturer",
+    "EPDM granules supplier",
+    "rubber recycling India",
+  ],
+
+  openGraph: {
+    title: "VSS Granulation",
+    description:
+      "Leading manufacturer of crumb rubber, EPDM granules and tyre wire from recycled tyres.",
+    url: "https://vssgranulation.com",
+    siteName: "VSS Granulation",
+
+    images: [
+      {
+        url: "https://vssgranulation.com/images/crumb_rubber_a1.png",
+        width: 1200,
+        height: 630,
+        alt: "VSS Granulation Crumb Rubber",
+      },
+    ],
+
+    type: "website",
+  },
+};
 export default function Home() {
   return (
     <main>
@@ -49,7 +83,12 @@ export default function Home() {
         <div className={styles.aboutContainer}>
 
           <div className={styles.aboutImage}>
-            <img src="/images/crumb_rubber_a1.png" alt="About VSS Granulation" />
+            <Image
+              src="/images/crumb_rubber_a1.png"
+              alt="About VSS Granulation"
+              width={600}
+              height={400}
+            />
           </div>
 
           <div className={styles.aboutContent}>

@@ -1,5 +1,6 @@
 import styles from "../styles/HomeProducts.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const products = [
   {
@@ -39,7 +40,12 @@ export default function HomeProducts() {
           {products.map((product, index) => (
             <div key={index} className={styles.card}>
               <div className={styles.imageWrapper}>
-                <img src={product.image} alt={product.title} />
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={500}
+                  height={350}
+                />
               </div>
               <h3>{product.title}</h3>
               <p>{product.description}</p>

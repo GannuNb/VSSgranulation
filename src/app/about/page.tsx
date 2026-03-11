@@ -1,4 +1,40 @@
 import styles from "../../styles/About.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About VSS Granulation | Tyre Recycling & Rubber Granules Company",
+  description:
+    "Learn about VSS Granulation, a tyre recycling company transforming waste tyres into high-quality crumb rubber, EPDM granules, and tyre wire for industrial applications.",
+
+  keywords: [
+    "About VSS Granulation",
+    "tyre recycling company India",
+    "crumb rubber manufacturer",
+    "EPDM granules manufacturer",
+    "rubber recycling process",
+  ],
+
+  openGraph: {
+    title: "About VSS Granulation",
+    description:
+      "Discover how VSS Granulation converts waste tyres into valuable industrial materials through advanced recycling technology.",
+    url: "https://vssgranulation.com/about",
+    siteName: "VSS Granulation",
+
+    images: [
+      {
+        url: "https://vssgranulation.com/images/tyre-recycling.png",
+        width: 1200,
+        height: 630,
+        alt: "Tyre Recycling Process - VSS Granulation",
+      },
+    ],
+
+    type: "website",
+  },
+};
+
+
 
 export default function About() {
   return (
@@ -8,9 +44,9 @@ export default function About() {
 
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <h1>About VSSI Granulation</h1>
+          <h1>About VSS Granulation</h1>
           <p>
-            VSSI Granulation is a recycling company that converts waste tyres into valuable 
+            VSS Granulation is a recycling company that converts waste tyres into valuable 
             industrial materials using advanced technologies, 
             supporting sustainable manufacturing and environmental protection.
           </p>
@@ -30,7 +66,7 @@ export default function About() {
         <h2>Who We Are</h2>
 
         <p>
-          At VSSI Granulation, we specialize in tyre recycling and rubber
+          At VSS Granulation, we specialize in tyre recycling and rubber
           granulation processes that help industries reuse materials
           efficiently. Our company focuses on converting discarded tyres
           into high-quality crumb rubber, EPDM granules, and tyre wire
@@ -184,7 +220,7 @@ export default function About() {
       <section className={styles.whyChoose}>
         <div className={styles.container}>
 
-          <h2>Why Choose VSSI Granulation</h2>
+          <h2>Why Choose VSS Granulation</h2>
 
           <div className={styles.whyGrid}>
 

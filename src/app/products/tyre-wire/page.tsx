@@ -1,6 +1,40 @@
+import type { Metadata } from "next";
 import styles from "../../../styles/Productpage.module.css";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Tyre Wire Scrap Supplier | Tyre Derived Steel (TDS) | VSS Granulation",
+
+  description:
+    "VSS Granulation supplies high-quality tyre wire scrap (Tyre Derived Steel) recovered during tyre recycling. Strong recyclable steel wire used in industrial applications.",
+
+  keywords: [
+    "tyre wire scrap",
+    "tyre derived steel",
+    "TDS steel wire",
+    "recycled tyre steel wire",
+    "tyre recycling steel wire supplier"
+  ],
+
+  openGraph: {
+    title: "Tyre Wire Scrap | VSS Granulation",
+    description:
+      "High-strength steel wire recovered from recycled tyres and used in various industrial applications.",
+    url: "https://vssgranulation.com/products/tyre-wire",
+
+    images: [
+      {
+        url: "https://vssgranulation.com/images/tyre_wire_a1.png",
+        width: 1200,
+        height: 630,
+        alt: "Tyre Wire Scrap recovered from recycled tyres"
+      }
+    ],
+
+    type: "website"
+  }
+};
 
 export default function TyreWire() {
   return (
@@ -23,9 +57,9 @@ export default function TyreWire() {
           </p>
 
           <div className={styles.heroBtns}>
-            <a href="/contact" className={styles.heroBtnPrimary}>
+            <Link href="/contact" className={styles.heroBtnPrimary}>
               Enquire Now
-            </a>
+            </Link>
 
             <a href="#applications" className={styles.heroBtnSecondary}>
               View Applications
@@ -40,7 +74,7 @@ export default function TyreWire() {
         <div className={styles.imageBox}>
           <Image
             src="/images/tyre_wire_a1.png"
-            alt="Tyre Wire Scrap"
+            alt="Recycled tyre wire scrap steel recovered during tyre recycling process"
             width={600}
             height={420}
             className={styles.productImage}

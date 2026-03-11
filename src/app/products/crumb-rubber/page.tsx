@@ -1,6 +1,40 @@
+import type { Metadata } from "next";
 import styles from "../../../styles/Productpage.module.css";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Crumb Rubber Manufacturer | Recycled Rubber Granules | VSS Granulation",
+
+  description:
+    "VSS Granulation manufactures high-quality crumb rubber from recycled tyres. Our rubber granules are widely used in sports surfaces, playground flooring, road construction and industrial applications.",
+
+  keywords: [
+    "crumb rubber manufacturer",
+    "recycled rubber granules",
+    "crumb rubber supplier India",
+    "tyre recycling crumb rubber",
+    "rubber granules for sports flooring",
+  ],
+
+  openGraph: {
+    title: "Crumb Rubber | VSS Granulation",
+    description:
+      "Premium crumb rubber produced from recycled tyres for sports flooring, road construction and industrial use.",
+    url: "https://vssgranulation.com/products/crumb-rubber",
+
+    images: [
+      {
+        url: "https://vssgranulation.com/images/Crumbrub1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Crumb Rubber by VSS Granulation",
+      },
+    ],
+
+    type: "website",
+  },
+};
 
 export default function CrumbRubber() {
   return (
@@ -23,9 +57,9 @@ export default function CrumbRubber() {
           </p>
 
           <div className={styles.heroBtns}>
-            <a href="/contact" className={styles.heroBtnPrimary}>
+            <Link href="/contact" className={styles.heroBtnPrimary}>
               Enquire Now
-            </a>
+            </Link>
 
             <a href="#applications" className={styles.heroBtnSecondary}>
               View Applications
@@ -39,7 +73,7 @@ export default function CrumbRubber() {
         <div className={styles.imageBox}>
           <Image
             src="/images/Crumbrub1.jpg"
-            alt="Crumb Rubber"
+            alt="Crumb rubber granules manufactured by VSS Granulation"
             width={600}
             height={420}
             className={styles.productImage}

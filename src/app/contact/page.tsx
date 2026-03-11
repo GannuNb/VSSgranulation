@@ -2,6 +2,8 @@
 import styles from "../../styles/Contact.module.css";
 import { useState } from "react";
 
+
+
 export default function Contact() {
 
   const [status, setStatus] = useState("");
@@ -65,7 +67,7 @@ export default function Contact() {
 
           <div className={styles.contactInfo}>
 
-            <h3>VSS GRANULATION PRIVATE LIMITED</h3>
+            <h3>VSS Granulation Private Limited</h3>
 
             <div className={styles.infoItem}>
               <strong>Admin Office</strong>
@@ -103,7 +105,7 @@ export default function Contact() {
 
               <strong>✉ Email</strong>
 
-              <p>info@vikahrubbers.com</p>
+              <p>info@vssgranulation.com</p>
 
             </div>
 

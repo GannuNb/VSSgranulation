@@ -1,6 +1,40 @@
+import type { Metadata } from "next";
 import styles from "../../../styles/Productpage.module.css";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "EPDM Colored Rubber Granules Manufacturer | VSS Granulation",
+
+  description:
+    "VSS Granulation manufactures high-quality EPDM colored rubber granules used for playground flooring, athletic tracks, sports surfaces and decorative safety flooring.",
+
+  keywords: [
+    "EPDM granules manufacturer",
+    "colored rubber granules",
+    "EPDM playground flooring material",
+    "EPDM rubber granules supplier India",
+    "sports surface EPDM granules"
+  ],
+
+  openGraph: {
+    title: "EPDM Colored Rubber Granules | VSS Granulation",
+    description:
+      "Premium EPDM colored rubber granules for playground flooring, sports tracks and outdoor surfaces.",
+    url: "https://vssgranulation.com/products/epdm-granules",
+
+    images: [
+      {
+        url: "https://vssgranulation.com/images/topimg.webp",
+        width: 1200,
+        height: 630,
+        alt: "EPDM Colored Rubber Granules"
+      }
+    ],
+
+    type: "website"
+  }
+};
 
 export default function EPDMGranules() {
   return (
@@ -22,9 +56,9 @@ export default function EPDMGranules() {
           </p>
 
           <div className={styles.heroBtns}>
-            <a href="/contact" className={styles.heroBtnPrimary}>
+            <Link href="/contact" className={styles.heroBtnPrimary}>
               Enquire Now
-            </a>
+            </Link>
 
             <a href="#applications" className={styles.heroBtnSecondary}>
               View Applications
@@ -40,7 +74,7 @@ export default function EPDMGranules() {
         <div className={styles.imageBox}>
           <Image
             src="/images/topimg.webp"
-            alt="EPDM Granules"
+            alt="EPDM colored rubber granules for playground flooring and sports surfaces"
             width={600}
             height={420}
             className={styles.productImage}
