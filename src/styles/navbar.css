@@ -257,3 +257,38 @@
 }
 
 }
+/* ===== Fix only for Redmi Note 9 Pro width ===== */
+
+/* ===== MOBILE NAVBAR LAYOUT ===== */
+
+@media(max-width:600px){
+
+  .container{
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+.logo{
+    width:100%;
+    justify-content:center;
+    margin-bottom:10px; /* spacing added here */
+  }
+  .logoimg{
+    height:55px;
+  }
+
+  /* SEARCH + HAMBURGER ROW */
+
+  .search-box{
+    order:2;
+    flex:1;
+    max-width:none;
+  }
+
+  .hamburger{
+    display:flex;
+    order:3;
+    margin-left:10px;
+  }
+
+}
