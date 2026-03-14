@@ -6,7 +6,7 @@ import ContactCTA from "../components/ContactCTA";
 import IndustriesWeServe from "../components/IndustriesWeServe";
 import type { Metadata } from "next";
 import Image from "next/image";
-
+import CountUp from "react-countup";
 
 export const metadata: Metadata = {
   title: "VSS Granulation | Tyre Recycling & Rubber Granules Manufacturer",
@@ -76,50 +76,69 @@ export default function Home() {
         </div>
 
       </section>
+{/* ABOUT SECTION */}
 
-      {/* ABOUT SECTION */}
-      <section className={styles.aboutSection}>
+<section className={styles.aboutSection}>
 
-        <div className={styles.aboutContainer}>
+  {/* Background Image */}
+  <div className={styles.aboutImageWrapper}>
+    <Image
+      src="/images/crumb_rubber_a1.png"
+      alt="VSS Granulation"
+      fill
+      className={styles.aboutImage}
+    />
+  </div>
 
-          <div className={styles.aboutImage}>
-            <Image
-              src="/images/crumb_rubber_a1.png"
-              alt="About VSS Granulation"
-              width={600}
-              height={400}
-            />
-          </div>
+  {/* Content Card */}
+  <div className={styles.aboutCard}>
 
-          <div className={styles.aboutContent}>
+    <span className={styles.aboutTag}>
+      About Company
+    </span>
 
-            <h2 className={styles.aboutTitle}>
-              About VSS Granulation
-            </h2>
+    <h2 className={styles.aboutTitle}>
+      Sustainable Tyre Recycling Solutions
+    </h2>
 
-            <p className={styles.aboutText}>
-              VSS Granulation is committed to delivering high-quality granulated
-              materials designed for industrial applications. Our focus is on
-              reliability, innovation, and sustainable production processes.
-            </p>
+    <p className={styles.aboutText}>
+      VSS Granulation transforms waste tyres into valuable materials
+      like crumb rubber, EPDM granules, and tyre wire using advanced
+      recycling technology.
+    </p>
 
-            <p className={styles.aboutText}>
-              With advanced manufacturing techniques and a strong commitment
-              to quality, we ensure consistent products that meet industry
-              standards and client expectations.
-            </p>
+    <p className={styles.aboutText}>
+      Our mission is to deliver reliable industrial materials while
+      supporting sustainable manufacturing practices.
+    </p>
 
-            <div className={styles.buttonWrapper}>
-              <Link href="/about" className={styles.readMoreBtn}>
-                Read More →
-              </Link>
-            </div>
+    <Link href="/about" className={styles.readMoreBtn}>
+      Learn More →
+    </Link>
 
-          </div>
+    {/* STATS */}
+    <div className={styles.statsGrid}>
 
-        </div>
+      <div className={styles.statCard}>
+        <h3>10+</h3>
+        <p>Countries Served</p>
+      </div>
 
-      </section>
+      <div className={styles.statCard}>
+        <h3>5000+</h3>
+        <p>Tons Recycled</p>
+      </div>
+
+      <div className={styles.statCard}>
+        <h3>15+</h3>
+        <p>Industrial Applications</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       <HomeProducts />
 

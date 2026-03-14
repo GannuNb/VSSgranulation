@@ -1,49 +1,99 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import styles from "../styles/Industries.module.css";
 
+type Industry = {
+  title: string;
+  image: string;
+  description: string;
+};
+
+const industries: Industry[] = [
+  {
+    title: "Road Construction",
+    image: "/images/road-construction.webp",
+    description:
+      "Crumb rubber improves asphalt durability and flexibility for longer lasting road surfaces."
+  },
+  {
+    title: "Sports Flooring",
+    image: "/images/epdm1.jpeg",
+    description:
+      "Rubber granules provide shock absorption and durability for sports tracks and athletic surfaces."
+  },
+  {
+    title: "Playgrounds",
+    image: "/images/epdm2.jpg",
+    description:
+      "EPDM safety flooring creates safe, impact-resistant playground surfaces for children."
+  },
+  {
+    title: "Rubber Manufacturing",
+    image: "/images/epdmg1.jpg",
+    description:
+      "Recycled rubber materials are used in producing mats, tiles and industrial rubber products."
+  }
+];
+
 export default function IndustriesWeServe() {
+
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+
+    cardsRef.current.forEach((card) => {
+
+      if (!card) return;
+
+      card.addEventListener("mousemove", (e: MouseEvent) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--x", `${x}px`);
+        card.style.setProperty("--y", `${y}px`);
+
+      });
+
+    });
+
+  }, []);
+
   return (
     <section className={styles.industriesSection}>
+
       <div className={styles.container}>
 
-        <h2 className={styles.title}>Industries We Serve</h2>
-        <p className={styles.subtitle}>
-          Our granulated rubber products are widely used across multiple
-          industries for sustainable and durable applications.
-        </p>
+        <h2 className={styles.sectionTitle}>Industries We Serve</h2>
 
-        <div className={styles.grid}>
+        <div className={styles.cards}>
 
-          <div className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <img src="/images/road-construction.webp" alt="Road Construction"/>
+          {industries.map((industry, index) => (
+            <div
+              key={index}
+              className={styles.card}
+              ref={(el) => {
+                cardsRef.current[index] = el;
+              }}            >
+
+              <div className={styles.imageWrapper}>
+                <img src={industry.image} alt={industry.title} />
+              </div>
+
+              <h3>{industry.title}</h3>
+
+              <p>{industry.description}</p>
+
             </div>
-            <h3>Road Construction</h3>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <img src="/images/epdm1.jpeg" alt="Sports Flooring"/>
-            </div>
-            <h3>Sports Flooring</h3>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <img src="/images/epdm2.jpg" alt="Playgrounds"/>
-            </div>
-            <h3>Playgrounds</h3>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <img src="/images/epdmg1.jpg" alt="Rubber Manufacturing"/>
-            </div>
-            <h3>Rubber Manufacturing</h3>
-          </div>
+          ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

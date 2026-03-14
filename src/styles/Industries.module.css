@@ -1,12 +1,13 @@
-.industriesSection{
-  padding:100px 20px;
+/* ============================= */
+/* INDUSTRIES SECTION */
+/* ============================= */
 
-  background:linear-gradient(
-    135deg,
-    #f8fbff,
-    #eef3f8
-  );
+.industriesSection{
+  padding:120px 20px;
+  background:#2c1c54;
 }
+
+/* container */
 
 .container{
   max-width:1200px;
@@ -14,98 +15,180 @@
   text-align:center;
 }
 
-/* TITLE */
+/* title */
 
-.title{
-  font-size:38px;
-  font-weight:700;
-  color:#0f2027;
-  margin-bottom:12px;
-  font-family: Playfair Display, serif;
+.sectionTitle{
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  color:white;
+  margin-bottom:80px;
 }
 
-.subtitle{
-  max-width:650px;
-  margin:auto;
-  margin-bottom:60px;
-  color:#555;
-  font-size:16px;
-  line-height:1.6;
-}
 
+/* ============================= */
 /* GRID */
+/* ============================= */
 
-.grid{
+.cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:30px;
 }
 
-/* CARD */
+/* ============================= */
+/* GLASS CARD */
+/* ============================= */
 
 .card{
-  background:white;
+  position:relative;
+  padding:40px 25px;
+  border-radius:18px;
 
-  border-radius:14px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
 
-  padding:18px;
+  border:1px solid rgba(255,255,255,0.18);
 
+  color:white;
   text-align:center;
 
-  box-shadow:0 8px 25px rgba(0,0,0,0.08);
-
   transition:all .35s ease;
+
+  box-shadow:0 20px 45px rgba(0,0,0,0.4);
+
+  overflow:hidden;
 }
+
+/* ============================= */
+/* FLASH SPOTLIGHT EFFECT */
+/* ============================= */
+
+.card::after{
+  content:"";
+  position:absolute;
+
+  left:var(--x);
+  top:var(--y);
+
+  width:260px;
+  height:260px;
+
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+
+  background:radial-gradient(
+    circle,
+    rgba(255,255,255,0.3),
+    transparent 60%
+  );
+
+  opacity:0;
+  transition:opacity .3s;
+}
+
+.card:hover::after{
+  opacity:1;
+}
+
+/* ============================= */
+/* GLOW SWEEP */
+/* ============================= */
+
+.card::before{
+  content:"";
+  position:absolute;
+
+  width:220%;
+  height:220%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+
+  top:-60%;
+  left:-60%;
+
+  transform:rotate(25deg);
+
+  opacity:0;
+
+  transition:0.6s;
+}
+
+.card:hover::before{
+  opacity:1;
+  left:100%;
+}
+
+/* ============================= */
+/* CARD HOVER */
+/* ============================= */
 
 .card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 30px 60px rgba(0,0,0,0.55);
 }
 
+/* ============================= */
 /* IMAGE */
+/* ============================= */
 
 .imageWrapper{
-  width:100%;
-  height:160px;
+  width:90px;
+  height:90px;
+  margin:auto;
+  margin-bottom:20px;
+
+  border-radius:50%;
   overflow:hidden;
 
-  border-radius:10px;
-
-  margin-bottom:15px;
+  border:3px solid rgba(255,255,255,0.5);
 }
 
 .imageWrapper img{
   width:100%;
   height:100%;
-
   object-fit:cover;
-
-  transition:transform .5s ease;
 }
 
-.card:hover img{
-  transform:scale(1.08);
-}
-
+/* ============================= */
 /* TITLE */
+/* ============================= */
 
 .card h3{
-  font-size:18px;
+  font-size:20px;
+  margin-bottom:12px;
   font-weight:600;
-  color:#1f2933;
 }
 
+/* ============================= */
+/* TEXT */
+/* ============================= */
+
+.card p{
+  font-size:14px;
+  line-height:1.6;
+  color:#ddd;
+}
+
+/* ============================= */
 /* TABLET */
+/* ============================= */
 
 @media(max-width:1000px){
 
-  .grid{
+  .cards{
     grid-template-columns:repeat(2,1fr);
   }
 
 }
 
+/* ============================= */
 /* MOBILE */
+/* ============================= */
 
 @media(max-width:600px){
 
@@ -113,11 +196,11 @@
     padding:80px 18px;
   }
 
-  .title{
-    font-size:30px;
+  .sectionTitle{
+    font-size:32px;
   }
 
-  .grid{
+  .cards{
     grid-template-columns:1fr;
     gap:22px;
   }

@@ -7,21 +7,21 @@ const products = [
     title: "Crumb Rubber",
     image: "/images/crumb_rubber_a2.png",
     description:
-      "High-quality recycled rubber granules used for sports surfaces, playground flooring and industrial applications.",
+      "High-quality recycled rubber granules produced from processed waste tyres. Widely used in sports surfaces, playground flooring, rubber tiles, road construction, and various industrial applications due to its durability and shock-absorbing properties.",
     link: "/products/crumb-rubber"
   },
   {
     title: "EPDM Granules",
     image: "/images/epdm_a1.png",
     description:
-      "Colored EPDM granules ideal for playground flooring, athletic tracks and decorative safety surfaces.",
+      "Premium colored EPDM granules designed for long-lasting outdoor performance. Ideal for playground safety flooring, athletic tracks, landscaping surfaces, and decorative applications thanks to their UV resistance and vibrant color stability.",
     link: "/products/epdm-granules"
   },
   {
     title: "Tyre Wire",
     image: "/images/tyre-wire.jpg",
     description:
-      "Recovered high-strength steel wire extracted from recycled tyres for industrial reuse.",
+      "Recovered high-strength steel wire extracted from recycled tyres. This durable material is widely reused in construction reinforcement, industrial manufacturing, and metal recycling applications.",
     link: "/products/tyre-wire"
   }
 ];
@@ -29,33 +29,47 @@ const products = [
 export default function HomeProducts() {
   return (
     <section id="products" className={styles.productsSection}>
-      {/* glowing background circles */}
-      <div className={styles.circle1}></div>
-      <div className={styles.circle2}></div>
-      <div className={styles.circle3}></div>
 
       <div className={styles.container}>
+
         <h2 className={styles.sectionTitle}>Our Products</h2>
-        <div className={styles.cards}>
-          {products.map((product, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  width={500}
-                  height={350}
-                />
-              </div>
+
+        {products.map((product, index) => (
+
+          <div
+            key={index}
+            className={`${styles.productRow} ${index % 2 !== 0 ? styles.reverse : ""}`}
+          >
+
+            {/* IMAGE */}
+
+            <div className={styles.productImage}>
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={600}
+                height={400}
+              />
+            </div>
+
+            {/* TEXT */}
+
+            <div className={styles.productContent}>
               <h3>{product.title}</h3>
+
               <p>{product.description}</p>
+
               <Link href={product.link} className={styles.learnBtn}>
                 Learn More →
               </Link>
             </div>
-          ))}
-        </div>
+
+          </div>
+
+        ))}
+
       </div>
+
     </section>
   );
 }
