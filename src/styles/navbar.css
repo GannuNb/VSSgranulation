@@ -1,76 +1,81 @@
-/* ================= NAVBAR ================= */
+/* ===== NAVBAR ===== */
 .navbar{
-  background:#ebeefe;
-  border-bottom:1px solid #e2e8f0;
-  position:sticky;
+  position:fixed;
   top:0;
+  left:0;
+  width:100%;
   z-index:1000;
+  display:flex;
+  justify-content:center;
+  padding-top:15px;
+  background:transparent;
 }
 
-/* ================= CONTAINER ================= */
-
+/* ===== CONTAINER ===== */
 .container{
-  max-width:1400px;
-  margin:auto;
-  padding:12px 20px;
+  width:95%;
+  max-width:1500px;
+  background:rgba(255,255,255,0.95);
+  border-radius:50px;
+  padding:14px 28px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  border:1px solid rgba(0,0,0,0.05);
 }
 
-/* ================= LOGO ================= */
-
-.logo{
-  display:flex;
-  align-items:center;
-}
-
+/* ===== LOGO ===== */
 .logoimg{
-  height:60px;
+  height:55px;
   width:auto;
 }
 
-/* ================= SEARCH BOX ================= */
+/* ===== SEARCH BOX ===== */
 
 .search-box{
   position:relative;
-  flex:1;
-  max-width:320px;
+  width:240px;
 }
 
-/* SEARCH INPUT */
-
+/* input */
 .search-box input{
   width:100%;
-  padding:9px 40px 9px 14px;
-  border-radius:20px;
-  border:1px solid #385e6d;
+  height:38px;
+  padding:0 38px 0 14px;
+  border-radius:25px;
+  border:1px solid #e2e8f0;
   outline:none;
   font-size:14px;
+  background:white;
+  transition:0.3s;
 }
 
+.search-box input:focus{
+  border-color:#7c3aed;
+  box-shadow:0 0 0 3px rgba(124,58,237,0.15);
 
-/* SEARCH ICON */
+}
 
+/* search icon */
 .search-icon{
   position:absolute;
   right:12px;
   top:50%;
   transform:translateY(-50%);
   font-size:18px;
-  color:#555;
+  color:#64748b;
+  pointer-events:none;
 }
 
-/* ================= SEARCH RESULTS ================= */
-
+/* ===== SEARCH RESULTS ===== */
 .search-results{
   position:absolute;
   top:42px;
   left:0;
   width:100%;
   background:white;
-  border-radius:8px;
+  border-radius:10px;
   box-shadow:0 10px 25px rgba(0,0,0,0.15);
   overflow:hidden;
   z-index:999;
@@ -86,47 +91,59 @@
   background:#f1f5f9;
 }
 
-/* ================= NAV LINKS ================= */
-
+/* ===== NAV LINKS ===== */
 .nav-links{
   display:flex;
-  gap:30px;
   align-items:center;
+  gap:35px;
 }
 
-/* NAV LINK */
-
+/* nav link */
 .nav-link{
-  color:#1e293b;
-  text-decoration:none;
+  position:relative;
   font-size:15px;
   font-weight:500;
+  text-decoration:none;
+  color:#000000;
   cursor:pointer;
-  
+  transition:0.3s;
+}
+
+/* underline animation */
+.nav-link::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  left:0;
+  bottom:-6px;
+  background:#7c3aed;
+  transition:0.3s;
+}
+
+.nav-link:hover::after{
+  width:100%;
 }
 
 .nav-link:hover{
-  color:#16a34a;
+  color:#7c3aed;
 }
 
 .nav-link.active{
-  color:#167d99;
+  color:#7c3aed;
 }
 
-/* ================= DROPDOWN ================= */
-
+/* ===== DROPDOWN ===== */
 .dropdown{
   position:relative;
 }
 
-/* DROPDOWN MENU */
-
 .dropdown-menu{
   position:absolute;
-  top:35px;
+  top:36px;
   left:0;
   background:white;
-  border-radius:8px;
+  border-radius:10px;
   min-width:200px;
   box-shadow:0 10px 25px rgba(0,0,0,0.15);
   display:flex;
@@ -137,39 +154,35 @@
   transition:0.25s;
 }
 
-/* DESKTOP HOVER */
-
+/* desktop hover */
 @media(min-width:901px){
-
   .dropdown:hover .dropdown-menu{
     opacity:1;
     visibility:visible;
     transform:translateY(0);
   }
-
 }
 
-/* MOBILE CLICK */
-
+/* mobile click */
 .dropdown-menu.show{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
 }
 
-/* DROPDOWN ITEM */
-
+/* dropdown item */
 .dropdown-item{
   padding:12px 18px;
   text-decoration:none;
   color:#334155;
+  font-size:14px;
 }
 
 .dropdown-item:hover{
   background:#f1f5f9;
 }
 
-/* ================= HAMBURGER ================= */
+/* ===== HAMBURGER ===== */
 
 .hamburger{
   display:none;
@@ -185,64 +198,42 @@
   border-radius:2px;
 }
 
-
-/* ================= MOBILE ================= */
+/* ===== MOBILE ===== */
 
 @media(max-width:900px){
-  .container{
-    flex-wrap:nowrap;
-  }
+.container{
+  flex-wrap:wrap;
+}
 
-  /* LOGO */
-  .logo{
-    order:1;
-  }
+.hamburger{
+  display:flex;
+}
 
-  /* SEARCH CENTER */
-  .search-box{
-    order:2;
-    flex:1;
-    max-width:300px;
-  }
+.nav-links{
+  width:100%;
+  background:white;
+  flex-direction:column;
+  gap:25px;
+  padding:30px 0;
+  text-align:center;
+  display:none;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
 
-  /* HAMBURGER RIGHT */
-  .hamburger{
-    display:flex;
-    order:3;
-  }
+.nav-links.active{
+  display:flex;
+}
 
-  /* NAV LINKS */
-
-  .nav-links{
-    order:4;
-    width:100%;
-    background:#f4f8f6;
-    flex-direction:column;
-    gap:25px;
-    padding:30px 0;
-    text-align:center;
-    display:none;
-  }
-
-  .nav-links.active{
-    display:flex;
-  }
-
-
-  /* MOBILE DROPDOWN */
-
+/* mobile dropdown */
 .dropdown-menu{
   position:static;
   box-shadow:none;
   background:transparent;
   max-height:0;
   overflow:hidden;
-  padding:0;
   border:none;
   transition:max-height 0.3s ease;
-  width:100%;
-  padding-left:45px;
-
 }
 
 .dropdown-menu.show{
@@ -250,45 +241,109 @@
 }
 
 .dropdown-item{
-  display:block;
-  text-align:left;
   padding:10px 0;
-  font-size:15px;
+}
 }
 
-}
-/* ===== Fix only for Redmi Note 9 Pro width ===== */
-
-/* ===== MOBILE NAVBAR LAYOUT ===== */
+/* ===== SMALL MOBILE ===== */
 
 @media(max-width:600px){
+/* hide search on mobile */
+.search-box{
+  display:none;
+}
 
-  .container{
-    flex-wrap:wrap;
-    gap:10px;
-  }
+/* container layout */
+.container{
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  align-items:center;
+}
 
-.logo{
-    width:100%;
-    justify-content:center;
-    margin-bottom:10px; /* spacing added here */
-  }
-  .logoimg{
-    height:55px;
-  }
+/* logo */
+.logoimg{
+  height:50px;
+}
 
-  /* SEARCH + HAMBURGER ROW */
+/* hamburger */
+.hamburger{
+  display:flex;
+}
 
-  .search-box{
-    order:2;
-    flex:1;
-    max-width:none;
-  }
+/* mobile menu */
+.nav-links{
+  position:fixed;
+  top:75px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:340px;
+  background:rgba(255,255,255,0.97);   /* increased opacity */
+  backdrop-filter:blur(12px);
+  border-radius:14px;
+  padding:18px 22px;
+  flex-direction:column;
+  gap:0;
+  text-align:left;
+  opacity:0;
+  visibility:hidden;
+  transition:0.25s ease;
+  box-shadow:0 18px 40px rgba(0,0,0,0.18);
+}
 
-  .hamburger{
-    display:flex;
-    order:3;
-    margin-left:10px;
-  }
+/* show menu */
+.nav-links.active{
+  opacity:1;
+  visibility:visible;
+}
 
+/* nav links */
+.nav-link{
+  display:block;
+  width:100%;
+  padding:14px 0;
+  font-size:16px;
+  font-weight:500;
+  border-bottom:1px solid #f1f5f9;
+}
+
+/* last link remove border */
+.nav-links .nav-link:last-child{
+  border-bottom:none;
+}
+
+/* dropdown container */
+.dropdown{
+  width:100%;
+}
+
+/* dropdown title */
+.dropdown .nav-link{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* dropdown menu */
+.dropdown-menu{
+  position:static;
+  background:transparent;
+  box-shadow:none;
+  max-height:0;
+  overflow:hidden;
+  padding-left:10px;
+  transition:max-height .3s ease;
+}
+
+.dropdown-menu.show{
+  max-height:220px;
+}
+
+/* dropdown items */
+.dropdown-item{
+  display:block;
+  padding:10px 0;
+  font-size:15px;
+  color:#334155;
+}
 }
