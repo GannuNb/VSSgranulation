@@ -62,7 +62,7 @@ export default function Home() {
         {/* Content */}
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            VSS Granulation
+            VSS GRANULATION
           </h1>
 
           <p className={styles.heroText}>
@@ -76,69 +76,69 @@ export default function Home() {
         </div>
 
       </section>
-{/* ABOUT SECTION */}
+      {/* ABOUT SECTION */}
 
-<section className={styles.aboutSection}>
+      <section className={styles.aboutSection}>
 
-  {/* Background Image */}
-  <div className={styles.aboutImageWrapper}>
-    <Image
-      src="/images/crumb_rubber_a1.png"
-      alt="VSS Granulation"
-      fill
-      className={styles.aboutImage}
-    />
-  </div>
+        {/* Background Image */}
+        <div className={styles.aboutImageWrapper}>
+          <Image
+            src="/images/crumb_rubber_a1.png"
+            alt="VSS Granulation"
+            fill
+            className={styles.aboutImage}
+          />
+        </div>
 
-  {/* Content Card */}
-  <div className={styles.aboutCard}>
+        {/* Content Card */}
+        <div className={styles.aboutCard}>
 
-    <span className={styles.aboutTag}>
-      About Company
-    </span>
+          <span className={styles.aboutTag}>
+            About Company
+          </span>
 
-    <h2 className={styles.aboutTitle}>
-      Sustainable Tyre Recycling Solutions
-    </h2>
+          <h2 className={styles.aboutTitle}>
+            Sustainable TYRE RECYCLING Solutions
+          </h2>
 
-    <p className={styles.aboutText}>
-      VSS Granulation transforms waste tyres into valuable materials
-      like crumb rubber, EPDM granules, and tyre wire using advanced
-      recycling technology.
-    </p>
+          <p className={styles.aboutText}>
+            VSS Granulation transforms waste tyres into valuable materials
+            like crumb rubber, EPDM granules, and tyre wire using advanced
+            recycling technology.
+          </p>
 
-    <p className={styles.aboutText}>
-      Our mission is to deliver reliable industrial materials while
-      supporting sustainable manufacturing practices.
-    </p>
+          <p className={styles.aboutText}>
+            Our mission is to deliver reliable industrial materials while
+            supporting sustainable manufacturing practices.
+          </p>
 
-    <Link href="/about" className={styles.readMoreBtn}>
-      Learn More →
-    </Link>
+          <Link href="/about" className={styles.readMoreBtn}>
+            Learn More →
+          </Link>
 
-    {/* STATS */}
-    <div className={styles.statsGrid}>
+          {/* STATS */}
+          <div className={styles.statsGrid}>
 
-      <div className={styles.statCard}>
-        <h3>10+</h3>
-        <p>Countries Served</p>
-      </div>
+            <div className={styles.statCard}>
+              <h3>10+</h3>
+              <p>Countries Served</p>
+            </div>
 
-      <div className={styles.statCard}>
-        <h3>5000+</h3>
-        <p>Tons Recycled</p>
-      </div>
+            <div className={styles.statCard}>
+              <h3>5000+</h3>
+              <p>Tons Recycled</p>
+            </div>
 
-      <div className={styles.statCard}>
-        <h3>15+</h3>
-        <p>Industrial Applications</p>
-      </div>
+            <div className={styles.statCard}>
+              <h3>15+</h3>
+              <p>Industrial Applications</p>
+            </div>
 
-    </div>
+          </div>
 
-  </div>
+        </div>
 
-</section>
+      </section>
 
       <HomeProducts />
 

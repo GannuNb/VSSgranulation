@@ -1,6 +1,21 @@
 /* ========================= */
 /* GLOBAL */
 /* ========================= */
+@font-face{
+  font-family:"Albertus Nova";
+  src:url("/fonts/albertus-nova-regular.woff2") format("woff2");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:"Albertus Nova";
+  src:url("/fonts/albertus-nova-bold.woff2") format("woff2");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
 
 html{
   scroll-behavior:smooth;
@@ -52,11 +67,16 @@ html{
 /* TITLE */
 
 .heroTitle{
-  font-family:"Playfair Display",serif;
+  font-family:"Albertus Nova", serif;
   font-size:54px;
   font-weight:700;
   margin-bottom:20px;
   color:white;
+  letter-spacing:2px;
+  /* text border */
+  -webkit-text-stroke:1px rgba(68, 67, 67, 0.6);
+  /* shadow for video readability */
+  text-shadow:0 4px 20px rgba(53, 52, 52, 0.6);
 }
 
 /* TEXT */
