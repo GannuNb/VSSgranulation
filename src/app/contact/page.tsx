@@ -21,7 +21,7 @@ export default function Contact() {
 
     try {
 
-      const res = await fetch("https://vssgranulation.com/contact.php", {
+      const res = await fetch("https://vssgranulation.com/send-email.php", {
         method: "POST",
         body: formData,
       });

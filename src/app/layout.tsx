@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   description:
     "VSS Granulation is a leading manufacturer of crumb rubber, EPDM granules and tyre wire from recycled tyres.",
 
+  alternates: {
+    canonical: "/",
+  },
+
   icons: {
     icon: "/images/logo_wt.png",
   },
@@ -38,32 +42,33 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "VSS Granulation Private Limited",
-  url: "https://vssgranulation.com",
-  logo: "https://vssgranulation.com/images/logo_wt.png",
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+91 4049471616",
-    contactType: "customer service",
-  },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "406, 4th Floor, Patel Towers, Adarsh Nagar Colony, Nagole",
-    addressLocality: "Hyderabad",
-    addressRegion: "Telangana",
-    postalCode: "500068",
-    addressCountry: "IN",
-  },
-};
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "VSS Granulation Private Limited",
+    url: "https://vssgranulation.com",
+    logo: "https://vssgranulation.com/images/logo_wt.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91 4049471616",
+      contactType: "customer service",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "406, 4th Floor, Patel Towers, Adarsh Nagar Colony, Nagole",
+      addressLocality: "Hyderabad",
+      addressRegion: "Telangana",
+      postalCode: "500068",
+      addressCountry: "IN",
+    },
+  };
 
   return (
     <html lang="en">
