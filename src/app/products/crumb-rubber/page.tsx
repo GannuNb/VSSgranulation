@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Crumb Rubber | VSS Granulation",
     description:
       "Premium crumb rubber produced from recycled tyres for sports flooring, road construction and industrial use.",
-    url: "https://vssgranulation.com/products/crumb-rubber",
+    url: "https://vssgranulation.com/products/crumb-rubber/",
 
     images: [
       {

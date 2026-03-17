@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Contact VSS Granulation",
     description:
       "Get in touch with VSS Granulation for high-quality crumb rubber, EPDM granules and tyre wire.",
-    url: "https://vssgranulation.com/contact",
+    url: "https://vssgranulation.com/contact/",
     siteName: "VSS Granulation",
 
     images: [

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Tyre Wire Scrap | VSS Granulation",
     description:
       "High-strength steel wire recovered from recycled tyres and used in various industrial applications.",
-    url: "https://vssgranulation.com/products/tyre-wire",
+    url: "https://vssgranulation.com/products/tyre-wire/",
 
     images: [
       {

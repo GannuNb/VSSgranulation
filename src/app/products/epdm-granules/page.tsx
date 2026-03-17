@@ -7,33 +7,46 @@ export const metadata: Metadata = {
   title: "EPDM Colored Rubber Granules Manufacturer | VSS Granulation",
 
   description:
-    "VSS Granulation manufactures high-quality EPDM colored rubber granules used for playground flooring, athletic tracks, sports surfaces and decorative safety flooring.",
+    "VSS Granulation manufactures high-quality EPDM colored rubber granules used for playground flooring, athletic tracks, sports surfaces, and decorative safety flooring.",
 
   keywords: [
     "EPDM granules manufacturer",
     "colored rubber granules",
     "EPDM playground flooring material",
     "EPDM rubber granules supplier India",
-    "sports surface EPDM granules"
+    "sports surface EPDM granules",
   ],
+
+  alternates: {
+    canonical: "/products/epdm-granules/",
+  },
 
   openGraph: {
     title: "EPDM Colored Rubber Granules | VSS Granulation",
     description:
       "Premium EPDM colored rubber granules for playground flooring, sports tracks and outdoor surfaces.",
-    url: "https://vssgranulation.com/products/epdm-granules",
+    url: "https://vssgranulation.com/products/epdm-granules/",
 
     images: [
       {
         url: "https://vssgranulation.com/images/topimg.webp",
         width: 1200,
         height: 630,
-        alt: "EPDM Colored Rubber Granules"
-      }
+        alt: "EPDM Colored Rubber Granules",
+      },
     ],
 
-    type: "website"
-  }
+    type: "website",
+
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "EPDM Colored Rubber Granules | VSS Granulation",
+    description:
+      "Premium EPDM colored rubber granules for playground flooring and sports surfaces.",
+    images: ["https://vssgranulation.com/images/topimg.webp"],
+  },
 };
 
 export default function EPDMGranules() {

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "VSS Granulation Products",
     description:
       "Discover crumb rubber, EPDM granules and tyre wire manufactured from recycled tyres.",
-    url: "https://vssgranulation.com/products",
+    url: "https://vssgranulation.com/products/",
     siteName: "VSS Granulation",
 
     images: [

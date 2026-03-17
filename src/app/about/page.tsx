@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "About VSS Granulation",
     description:
       "Discover how VSS Granulation converts waste tyres into valuable industrial materials through advanced recycling technology.",
-    url: "https://vssgranulation.com/about",
+    url: "https://vssgranulation.com/about/",
     siteName: "VSS Granulation",
 
     images: [
