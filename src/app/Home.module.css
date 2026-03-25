@@ -25,6 +25,7 @@ html{
 /* HERO SECTION */
 /* ========================= */
 
+
 .hero{
   position:relative;
   min-height:85vh;
@@ -46,16 +47,16 @@ html{
   z-index:0;
 }
 
-/* OVERLAY */
+/* ORIGINAL DARK OVERLAY */
 
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.45);
   z-index:1;
 }
 
-/* HERO CONTENT */
+/* CONTENT */
 
 .heroContent{
   position:relative;
@@ -64,29 +65,42 @@ html{
   padding:20px;
 }
 
-/* TITLE */
+/* ========================= */
+/* TEXT STYLES */
+/* ========================= */
 
 .heroTitle{
-  font-family:"Albertus Nova", serif;
-  font-size:54px;
-  font-weight:700;
-  margin-bottom:20px;
-  color:white;
-  letter-spacing:2px;
-  /* text border */
-  -webkit-text-stroke:1px rgba(68, 67, 67, 0.6);
-  /* shadow for video readability */
-  text-shadow:0 4px 20px rgba(53, 52, 52, 0.6);
+  font-family: "Albertus Nova", serif;
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  color: #cbd1ff;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.6);
 }
 
-/* TEXT */
+/* subtle underline accent */
+
+.heroTitle::after{
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin: 12px auto 0;
+  background: #ffffff;
+  opacity: 0.8;
+  border-radius: 2px;
+}
 
 .heroText{
-  font-size:18px;
-  line-height:1.6;
-  color:#e5e5e5;
-  margin-bottom:35px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin-bottom: 35px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
+
+/* BUTTON */
 
 /* BUTTON */
 
@@ -99,12 +113,131 @@ html{
   background:#203a43;
   color:white;
   text-decoration:none;
-  transition:.3s;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
 }
+
+/* Hover */
 
 .heroBtn:hover{
   background:#2c5364;
   transform:translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Click effect */
+
+.heroBtn:active{
+  transform: translateY(0);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+/* Shine animation */
+
+.heroBtn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-75%;
+  width:50%;
+  height:100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+/* Shine on hover */
+
+.heroBtn:hover::before{
+  animation: shine 0.8s ease;
+}
+
+@keyframes shine{
+  0%{
+    left:-75%;
+  }
+  100%{
+    left:125%;
+  }
+}
+/* ========================= */
+/* PREMIUM ANIMATIONS (SLOW) */
+/* ========================= */
+
+/* initial state */
+
+.heroTitle,
+.heroText,
+.heroBtn{
+  opacity: 0;
+}
+
+/* TITLE - slower & smoother */
+
+.animateTitle{
+  animation: smoothLeft 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes smoothLeft{
+  0%{
+    opacity: 0;
+    transform: translateX(-100px) scale(0.95);
+  }
+  60%{
+    opacity: 1;
+    transform: translateX(8px) scale(1.02);
+  }
+  100%{
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* TEXT - delayed more */
+
+.animateText{
+  animation: smoothRight 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes smoothRight{
+  0%{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* BUTTON - last and smooth */
+
+.animateBtn{
+  animation: smoothUp 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 1.1s;
+}
+
+@keyframes smoothUp{
+  0%{
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  60%{
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02);
+  }
+  100%{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 /* ========================= */

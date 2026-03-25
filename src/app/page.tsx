@@ -1,5 +1,6 @@
 import styles from "./Home.module.css";
 import Link from "next/link";
+import HeroContent from "./HeroContent";
 import HomeProducts from "../components/HomeProducts";
 import WhyChooseUs from "../components/WhyChooseUs";
 import ContactCTA from "../components/ContactCTA";
@@ -42,38 +43,15 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+<section className={styles.hero}>
 
-      <section className={styles.hero}>
-
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={styles.heroVideo}
-        >
+        <video autoPlay muted loop playsInline className={styles.heroVideo}>
           <source src="/images/Hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Overlay */}
         <div className={styles.overlay}></div>
 
-        {/* Content */}
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            VSS GRANULATION
-          </h1>
-
-          <p className={styles.heroText}>
-            Leading manufacturer of high-quality granulated materials,
-            delivering reliable solutions for industrial applications.
-          </p>
-
-          <a href="#products" className={styles.heroBtn}>
-            Explore Products
-          </a>
-        </div>
+        <HeroContent />
 
       </section>
       {/* ABOUT SECTION */}
